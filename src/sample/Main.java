@@ -65,37 +65,34 @@ public class Main extends Application {
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
 
-
+        //Sign in Button Event Handler
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent e) {
-                actiontarget.setFill(Color.FIREBRICK);
+                actiontarget.setId("actiontarget");
                 actiontarget.setText("Sign in button pressed");
             }
         });
 
         //Scene code
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 1000, 1050);
+        scene.getStylesheets().add(Main.class.getResource("Styles.css").toExternalForm());
         primaryStage.setScene(scene);
 
 
         //Controls
         Text scenetitle = new Text("SYNC");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        scenetitle.setId("sync-title");
         grid.add(scenetitle, 0, 0, 2, 1);
 
         Label userName = new Label("Bluetooth Name:");
         grid.add(userName, 0, 1);
 
         TextField userTextField = new TextField();
-        grid.add(userTextField, 1, 1);
+        //grid.add(userTextField, 1, 1);
+        grid.add(userTextField, 0, 2);
 
-        /*Label pw = new Label("Password:");
-        grid.add(pw, 0, 2);
-
-        PasswordField pwBox = new PasswordField();
-        grid.add(pwBox, 1, 2);*/
 
 
 
